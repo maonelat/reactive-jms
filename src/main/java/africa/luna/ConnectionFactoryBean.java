@@ -23,10 +23,11 @@ public class ConnectionFactoryBean {
 
     @Inject
     MQConfig config;
-//    @Produces
-//    ConnectionFactory factory() {
-//        return new ActiveMQJMSConnectionFactory("tcp://localhost:61616","quarkus", "quarkus");
-//    }
+
+    @Produces
+    ConnectionFactory factory() {
+        return new ActiveMQJMSConnectionFactory("tcp://localhost:61616","quarkus", "quarkus");
+    }
 
     @Produces
     @DefaultBean
@@ -49,8 +50,6 @@ public class ConnectionFactoryBean {
             System.out.println(factory.entrySet());
         }
         catch (JMSException je) {
-            // Something went wrong. Either handle it here or throw it on.
-            je.printStackTrace();
             throw je;
         }
         return factory;

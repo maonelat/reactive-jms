@@ -12,6 +12,7 @@ import java.util.Random;
  */
 @ApplicationScoped
 public class MessageProducer {
+
     @Inject
     ConnectionFactory connectionFactory;
 //    @Inject @Channel("jms-q")
